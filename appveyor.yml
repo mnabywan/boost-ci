@@ -2,12 +2,51 @@ version: 1.0.{build}
 branches:
   only:
     - master
-
-image: Visual Studio 2015
-
+    
 environment:
   matrix:
-    - platform: x64
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      platform: x64
+      ARCH: x64-msvc15
+      configuration: Release
+      CMAKE_GENERATOR: "Visual Studio 15 2017 Win64"
+      MSVCVERSION: v141
+      MSVCYEAR: "vs2017"
+      MSVCABR: "15"
+      VC_VER: 15.0
+      PYTHONPATH: c:\Python37-x64\
+      PYTHONPATHOMNI: "/cygdrive/c/Python37-x64/python"
+      PY_VER: 37
+      BOOST_ROOT: C:/local/boost_1_64_0
+      BOOST_LIBS: C:/local/boost_1_64_0/lib64-msvc-14.0
+      ZMQ_BASE: C:\projects\libzmq
+      IDL_BASE: C:\projects\tangoidl
+      IDL_BIN: C:\Program Files\tangoidl
+      OMNI_BASE: C:\projects\omniORB-4.2.1    
+      BOOST_CFG: >-
+          using python : 3.7 : c:/python37-x64/python.exe : c:/python37-x64/include : c:/python37-x64/libs ;
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      platform: win32
+      ARCH: win32-msvc15
+      configuration: Release
+      CMAKE_GENERATOR: "Visual Studio 15 2017"
+      MSVCVERSION: v141
+      MSVCYEAR: "vs2017"
+      MSVCABR: "15"
+      VC_VER: 15.0
+      PYTHONPATH: c:\Python37\
+      PYTHONPATHOMNI: "/cygdrive/c/Python37/python"
+      PY_VER: 37
+      BOOST_ROOT: C:/local/boost_1_64_0
+      BOOST_LIBS: C:/local/boost_1_64_0/lib64-msvc-14.0
+      ZMQ_BASE: C:\projects\libzmq
+      IDL_BASE: C:\projects\tangoidl
+      IDL_BIN: C:\Program Files\tangoidl
+      OMNI_BASE: C:\projects\omniORB-4.2.1    
+      BOOST_CFG: >-
+          using python : 3.7 : c:/python37/python.exe : c:/python37/include : c:/python37/libs ;
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
       ARCH: x64-msvc9
       configuration: Release
       CMAKE_GENERATOR: "Visual Studio 9 2008 Win64"
@@ -26,26 +65,8 @@ environment:
       OMNI_BASE: C:\projects\omniORB-4.2.1
       BOOST_CFG: >-
           using python : 2.7 : c:/python27-x64/python.exe : c:/python27-x64/include : c:/python27-x64/libs ;
-    - platform: win32
-      ARCH: win32-msvc10
-      configuration: Release
-      CMAKE_GENERATOR: "Visual Studio 10 2010"
-      MSVCVERSION: v100
-      MSVCYEAR: "vs2010"
-      MSVCABR: "10"
-      VC_VER: 10.0
-      PYTHONPATH: c:\Python34\
-      PYTHONPATHOMNI: "/cygdrive/c/Python34/python"
-      PY_VER: 34
-      BOOST_ROOT: C:/local/boost_1_64_0
-      BOOST_LIBS: C:/local/boost_1_64_0/lib32-msvc-10.0
-      ZMQ_BASE: C:\projects\libzmq
-      IDL_BASE: C:\projects\tangoidl
-      IDL_BIN: C:\Program Files (x86)\tangoidl
-      OMNI_BASE: C:\projects\omniORB-4.2.1
-      BOOST_CFG: >-
-          using python : 3.4 : c:/python34/python.exe : c:/python34/include : c:/python34/libs ;
-    - platform: win32
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: win32
       ARCH: win32-msvc9
       configuration: Release
       CMAKE_GENERATOR: "Visual Studio 9 2008"
@@ -64,7 +85,28 @@ environment:
       OMNI_BASE: C:\projects\omniORB-4.2.1
       BOOST_CFG: >-
           using python : 2.7 : c:/python27/python.exe : c:/python27/include : c:/python27/libs ;
-    - platform: x64
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: win32
+      ARCH: win32-msvc10
+      configuration: Release
+      CMAKE_GENERATOR: "Visual Studio 10 2010"
+      MSVCVERSION: v100
+      MSVCYEAR: "vs2010"
+      MSVCABR: "10"
+      VC_VER: 10.0
+      PYTHONPATH: c:\Python34\
+      PYTHONPATHOMNI: "/cygdrive/c/Python34/python"
+      PY_VER: 34
+      BOOST_ROOT: C:/local/boost_1_64_0
+      BOOST_LIBS: C:/local/boost_1_64_0/lib32-msvc-10.0
+      ZMQ_BASE: C:\projects\libzmq
+      IDL_BASE: C:\projects\tangoidl
+      IDL_BIN: C:\Program Files (x86)\tangoidl
+      OMNI_BASE: C:\projects\omniORB-4.2.1
+      BOOST_CFG: >-
+          using python : 3.4 : c:/python34/python.exe : c:/python34/include : c:/python34/libs ;
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
       ARCH: x64-msvc10
       configuration: Release
       CMAKE_GENERATOR: "Visual Studio 10 2010 Win64"
@@ -83,7 +125,28 @@ environment:
       OMNI_BASE: C:\projects\omniORB-4.2.1
       BOOST_CFG: >-
           using python : 3.4 : c:/python34-x64/python.exe : c:/python34-x64/include : c:/python34-x64/libs ;
-    - platform: x64
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: win32
+      ARCH: win32-msvc12
+      configuration: Release
+      CMAKE_GENERATOR: "Visual Studio 12 2013"
+      MSVCVERSION: v120
+      MSVCYEAR: "vs2013"
+      MSVCABR: "13"
+      VC_VER: 13.0
+      PYTHONPATH: c:\Python34\
+      PYTHONPATHOMNI: "/cygdrive/c/Python34/python"
+      PY_VER: 34
+      BOOST_ROOT: C:/local/boost_1_64_0
+      BOOST_LIBS: C:/local/boost_1_64_0/lib64-msvc-12.0
+      ZMQ_BASE: C:\projects\libzmq
+      IDL_BASE: C:\projects\tangoidl
+      IDL_BIN: C:\Program Files\tangoidl
+      OMNI_BASE: C:\projects\omniORB-4.2.1
+      BOOST_CFG: >-
+          using python : 3.4 : c:/python34/python.exe : c:/python34/include : c:/python34/libs ;
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
       ARCH: x64-msvc12
       configuration: Release
       CMAKE_GENERATOR: "Visual Studio 12 2013 Win64"
@@ -102,7 +165,8 @@ environment:
       OMNI_BASE: C:\projects\omniORB-4.2.1
       BOOST_CFG: >-
           using python : 3.4 : c:/python34-x64/python.exe : c:/python34-x64/include : c:/python34-x64/libs ;
-    - platform: x64
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
       ARCH: x64-msvc14
       configuration: Release
       CMAKE_GENERATOR: "Visual Studio 14 2015 Win64"
@@ -121,7 +185,28 @@ environment:
       OMNI_BASE: C:\projects\omniORB-4.2.1    
       BOOST_CFG: >-
           using python : 3.5 : c:/python35-x64/python.exe : c:/python35-x64/include : c:/python35-x64/libs ;
-    - platform: x64
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: win32
+      ARCH: win32-msvc14
+      configuration: Release
+      CMAKE_GENERATOR: "Visual Studio 14 2015"
+      MSVCVERSION: v140
+      MSVCYEAR: "vs2015"
+      MSVCABR: "14"
+      VC_VER: 14.0
+      PYTHONPATH: c:\Python36\
+      PYTHONPATHOMNI: "/cygdrive/c/Python36/python"
+      PY_VER: 36
+      BOOST_ROOT: C:/local/boost_1_64_0
+      BOOST_LIBS: C:/local/boost_1_64_0/lib64-msvc-14.0
+      ZMQ_BASE: C:\projects\libzmq
+      IDL_BASE: C:\projects\tangoidl
+      IDL_BIN: C:\Program Files\tangoidl
+      OMNI_BASE: C:\projects\omniORB-4.2.1    
+      BOOST_CFG: >-
+          using python : 3.6 : c:/python36/python.exe : c:/python36/include : c:/python36/libs ;
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
       ARCH: x64-msvc14
       configuration: Release
       CMAKE_GENERATOR: "Visual Studio 14 2015 Win64"
@@ -142,9 +227,9 @@ environment:
           using python : 3.6 : c:/python36-x64/python.exe : c:/python36-x64/include : c:/python36-x64/libs ;
 init:
   # go to hell Xamarin (see http://help.appveyor.com/discussions/problems/4569)
-  - del "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.Targets\ImportAfter\Xamarin.Common.targets"
-  - del "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
-  - del "C:\Program Files (x86)\MSBuild\12.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
+  - cmd: if "%APPVEYOR_BUILD_WORKER_IMAGE%" NEQ "Visual Studio 2017" del "C:\Program Files (x86)\MSBuild\4.0\Microsoft.Common.Targets\ImportAfter\Xamarin.Common.targets"
+  - cmd: if "%APPVEYOR_BUILD_WORKER_IMAGE%" NEQ "Visual Studio 2017" del "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
+  - cmd: if "%APPVEYOR_BUILD_WORKER_IMAGE%" NEQ "Visual Studio 2017" del "C:\Program Files (x86)\MSBuild\12.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
   #RDP from start
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   # Boost
@@ -180,8 +265,12 @@ install:
   - cmd: if %ARCH%==win32-msvc10 call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat"
   - cmd: if %ARCH%==win32-msvc10 set path=C:\Windows\Microsoft.NET\Framework\v4.0.30319;%path%
   - cmd: if %ARCH%==x64-msvc10 call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 
-  - cmd: if %ARCH%==x64-msvc12 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x64
+  - cmd: if %ARCH%==win32-msvc12 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat"
+  - cmd: if %ARCH%==x64-msvc12 call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x64 
+  - cmd: if %ARCH%==win32-msvc14 call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
   - cmd: if %ARCH%==x64-msvc14 call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x64
+  - cmd: if %ARCH%==win32-msvc15 call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
+  - cmd: if %ARCH%==x64-msvc15 call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   - cmd: echo "Generator='%CMAKE_GENERATOR%'"
   - cmd: echo "Platform='%Platform%'"
   - cmd: set PYTHONPATH=%PYTHONPATH%
@@ -201,8 +290,12 @@ build_script:
   - cmd: if %ARCH%==x64-msvc9 b2 toolset=msvc-9.0 address-model=64 install link=static runtime-link=static,shared
   - cmd: if %ARCH%==win32-msvc10 b2 toolset=msvc-10.0 address-model=32 install link=static runtime-link=static,shared
   - cmd: if %ARCH%==x64-msvc10 b2 toolset=msvc-10.0 address-model=64 install link=static runtime-link=static,shared
+  - cmd: if %ARCH%==win32-msvc12 b2 toolset=msvc-12.0 address-model=32 install link=static runtime-link=static,shared
   - cmd: if %ARCH%==x64-msvc12 b2 toolset=msvc-12.0 address-model=64 install link=static runtime-link=static,shared
+  - cmd: if %ARCH%==win32-msvc14 b2 toolset=msvc-14.0 address-model=32 install link=static runtime-link=static,shared
   - cmd: if %ARCH%==x64-msvc14 b2 toolset=msvc-14.0 address-model=64 install link=static runtime-link=static,shared
+  - cmd: if %ARCH%==win32-msvc15 b2 toolset=msvc-15.0 address-model=32 install link=static runtime-link=static,shared
+  - cmd: if %ARCH%==x64-msvc15 b2 toolset=msvc-15.0 address-model=64 install link=static runtime-link=static,shared
 
 
 
