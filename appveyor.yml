@@ -297,8 +297,8 @@ build_script:
   - cmd: if %ARCH%==x64-msvc12 b2 toolset=msvc-12.0 address-model=64 install link=static runtime-link=static,shared
   - cmd: if %ARCH%==win32-msvc14 b2 toolset=msvc-14.0 address-model=32 install link=static runtime-link=static,shared
   - cmd: if %ARCH%==x64-msvc14 b2 toolset=msvc-14.0 address-model=64 install link=static runtime-link=static,shared
-  - cmd: if %ARCH%==win32-msvc15 b2 toolset=msvc-15.0 address-model=32 install link=static runtime-link=static,shared
-  - cmd: if %ARCH%==x64-msvc15 b2 toolset=msvc-15.0 address-model=64 install link=static runtime-link=static,shared
+  - cmd: if %ARCH%==win32-msvc15 b2 toolset=msvc-15.0 address-model=32 install link=static runtime-link=static,shared define=_ENABLE_EXTENDED_ALIGNED_STORAGE=1
+  - cmd: if %ARCH%==x64-msvc15 b2 toolset=msvc-15.0 address-model=64 install link=static runtime-link=static,shared define=_ENABLE_EXTENDED_ALIGNED_STORAGE=1
 
 
 
