@@ -3,6 +3,7 @@ branches:
   only:
     - master
     - support-new-python-versions
+    - support-new-python-versions-v142
 
 environment:
   BOOST_VERSION: "1.82.0"
@@ -12,8 +13,8 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: win32
       ADDR_MODEL: 32
-      ARCH: v140_x86
-      MSVCVERSION: 14.0
+      ARCH: v142_x86
+      MSVCVERSION: 14.2
       PYTHONPATH: c:\Python36\
       PY_VER: 36
       BOOST_CFG: >-
@@ -21,8 +22,8 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: x64
       ADDR_MODEL: 64
-      ARCH: v140_x64
-      MSVCVERSION: 14.0
+      ARCH: v142_x64
+      MSVCVERSION: 14.2
       PYTHONPATH: c:\Python36-x64\
       PY_VER: 36
       BOOST_CFG: >-
@@ -32,8 +33,8 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: win32
       ADDR_MODEL: 32
-      ARCH: v140_x86
-      MSVCVERSION: 14.0
+      ARCH: v142_x86
+      MSVCVERSION: 14.2
       PYTHONPATH: c:\Python37\
       PY_VER: 37
       BOOST_CFG: >-
@@ -41,8 +42,8 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: x64
       ADDR_MODEL: 64
-      ARCH: v140_x64
-      MSVCVERSION: 14.0
+      ARCH: v142_x64
+      MSVCVERSION: 14.2
       PYTHONPATH: c:\Python37-x64\
       PY_VER: 37
       BOOST_CFG: >-
@@ -52,8 +53,8 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: win32
       ADDR_MODEL: 32
-      ARCH: v140_x86
-      MSVCVERSION: 14.0
+      ARCH: v142_x86
+      MSVCVERSION: 14.2
       PYTHONPATH: c:\Python38\
       PY_VER: 38
       BOOST_CFG: >-
@@ -61,8 +62,8 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: x64
       ADDR_MODEL: 64
-      ARCH: v140_x64
-      MSVCVERSION: 14.0
+      ARCH: v142_x64
+      MSVCVERSION: 14.2
       PYTHONPATH: c:\Python38-x64\
       PY_VER: 38
       BOOST_CFG: >-
